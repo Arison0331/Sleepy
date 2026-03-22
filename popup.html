@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleepy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="title-row">
+          <h1 class="title">Sleepy</h1>
+          <span class="emoji">😪</span>
+        </div>
+        <p class="description" data-i18n="popup_desc">One-click to free up the current tab memory usage</p>
+      </header>
+
+      <div class="shell">
+      <div class="graf">
+        <div class="graf-inner">
+          <img src="images/graf.png" alt="Graf" />
+        </div>
+      </div>
+
+      <footer class="button-group">
+        <button id="sleep-active" class="primary-button">
+          <div class="button-content">
+            <span class="label" data-i18n="free_up">Free up</span>
+            <span id="active-shortcut" class="shortcut-tag">Alt/Option+w</span>
+          </div>
+        </button>
+        <button id="open-settings" class="settings-button" title="Open Settings">
+          <img src="images/settings.svg" alt="Settings" />
+        </button>
+      </footer>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

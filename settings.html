@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepy - Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="shell">
+        <header>
+            <button id="back-button" class="icon-button">
+                <img src="images/arrow-left.svg" alt="Back">
+            </button>
+            <h1 class="title" data-i18n="settings_title">Setting</h1>
+            <button id="save-button" class="text-button" data-i18n="save">Save</button>
+        </header>
+
+        <div class="divider"></div>
+
+        <main class="settings-content">
+            <div class="setting-item">
+                <div class="lang-container">
+                    <span class="label-text" data-i18n="language">Language</span>
+                    <select id="lang-select" class="lang-select">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="discard-media">
+                    <span class="checkmark"></span>
+                    <span class="label-text" data-i18n="media_confirm">When media is playing on the page, a second confirmation is required to free up memory</span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="auto-discard">
+                    <span class="checkmark"></span>
+                    <span class="label-text" data-i18n="auto_discard">Free up memory when tab is inactive for more than a certain time</span>
+                </label>
+                <div class="slider-group">
+                    <input type="range" id="discard-time" min="5" max="720" value="360" step="5">
+                    <span class="time-value">06 h 00 min</span>
+                </div>
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="auto-delete">
+                    <span class="checkmark"></span>
+                    <span class="label-text" data-i18n="auto_delete">If it's been inactive for more than a certain time, delete the tab (Except for pinned tabs)</span>
+                </label>
+                <div class="slider-group">
+                    <input type="range" id="delete-time" min="1" max="48" value="20">
+                    <span class="time-value">20 h</span>
+                </div>
+            </div>
+        </main>
+
+        <div class="divider footer-divider"></div>
+
+        <footer>
+            <button id="shortcut-button" class="full-button">
+                <img src="images/new-window.svg" alt="Shortcut" class="btn-icon">
+                <span class="btn-text" data-i18n="shortcut">Shortcut</span>
+            </button>
+        </footer>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

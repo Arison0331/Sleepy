@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'PingFang SC', system-ui, sans-serif;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  width: 280px;
+  height: 404px;
+  overflow: hidden;
+}
+
+.shell {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 16px 16px 0 16px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #636467;
+  line-height: 1.25em;
+}
+
+.emoji {
+  font-size: 16px;
+  font-weight: 600;
+  color: #636467;
+  line-height: 1.25em;
+}
+
+.description {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #A1A2A8;
+  line-height: 1.1428571428571428em;
+  width: 248px;
+}
+
+.graf {
+  position: absolute;
+  bottom: 72px; /* 16px padding + 40px button + 16px padding */
+  left: 16px;
+  width: 248px;
+  height: 240px;
+  background-color: #CFE9F8;
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 1px 3px rgba(233, 233, 233, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.graf-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graf img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-group {
+  margin-top: auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+button:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+}
+
+button:active {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 1px 2px -0.5px rgba(0, 0, 0, 0.15), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.08), 0 0 0 4px #F2F2F2;
+}
+
+.primary-button {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-image: linear-gradient(180deg, #F4F4F4 0%, #FEFEFE 100%), 
+                    linear-gradient(180deg, #FFFFFF 0%, #ECECEC 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 2.698px 2.923px -1.349px rgba(0, 0, 0, 0.25), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+}
+
+.settings-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-image: linear-gradient(180deg, #F4F4F4 0%, #FEFEFE 100%), 
+                    linear-gradient(180deg, #FFFFFF 0%, #ECECEC 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 2.698px 2.923px -1.349px rgba(0, 0, 0, 0.25), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #636467;
+  line-height: 1.25em;
+}
+
+.shortcut-tag {
+  background-color: #F6F8FA;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  color: #42464E;
+  line-height: 1.8em;
+  box-shadow: 0px 0px 0px 1px rgba(221, 226, 233, 1);
+}
+
+.settings-button img {
+  width: 16px;
+  height: 16px;
+}

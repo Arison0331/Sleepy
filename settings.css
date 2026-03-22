@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'PingFang SC', system-ui, sans-serif;
+  background-color: #FFFFFF;
+  width: 280px;
+  height: 404px;
+  overflow: hidden;
+}
+
+.shell {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #636467;
+  line-height: 1.25em;
+  flex: 1;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.divider {
+  width: 248px;
+  height: 1px;
+  background-color: #DDE2E9;
+  margin: 0 auto;
+}
+
+.footer-divider {
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+.settings-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lang-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.lang-select {
+  appearance: none;
+  background: #F6F8FA;
+  border: 1px solid #DDE2E9;
+  border-radius: 6px;
+  padding: 4px 28px 4px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #636467;
+  cursor: pointer;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23636467' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: all 0.15s ease;
+}
+
+.lang-select:hover {
+  background-color: #EAEDF1;
+}
+
+.lang-select:focus {
+  border-color: #EE6D9D;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+  color: #0C0D0E;
+  line-height: 1.5em;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 14px;
+  width: 14px;
+  background-color: #FFFFFF;
+  border: 1px solid #DDE2E9;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative; /* Ensure relative positioning for checkmark */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #EE6D9D;
+  border-color: #EE6D9D;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 50%;
+  top: 45%;
+  width: 3px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.label-text {
+  flex: 1;
+}
+
+.slider-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 22px;
+  transition: opacity 0.2s ease;
+}
+
+.slider-group.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+input[type="range"] {
+  flex: 1;
+  height: 4px;
+  background: #EAEDF1;
+  border-radius: 2px;
+  appearance: none;
+  pointer-events: auto; /* Ensure it receives events */
+  position: relative;
+  z-index: 10;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 18px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 1.27px 0px rgba(0, 0, 0, 0.1), 0px 3.81px 6.35px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.time-value {
+  font-size: 12px;
+  color: #0C0D0E;
+  white-space: nowrap;
+}
+
+footer {
+  margin-top: auto;
+  padding: 16px;
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-image: linear-gradient(180deg, #F4F4F4 0%, #FEFEFE 100%),
+                    linear-gradient(180deg, #FFFFFF 0%, #ECECEC 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 2.698px 2.923px -1.349px rgba(0, 0, 0, 0.25), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.icon-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+}
+
+.icon-button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 1px 2px -0.5px rgba(0, 0, 0, 0.15), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.08), 0 0 0 4px #F2F2F2;
+}
+
+.icon-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.text-button {
+  background: none;
+  border: none;
+  color: #EE6D9D;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: all 0.15s ease;
+}
+
+.text-button:hover {
+  opacity: 0.8;
+}
+
+.text-button:active {
+  opacity: 0.6;
+}
+
+.full-button {
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-image: linear-gradient(180deg, #F4F4F4 0%, #FEFEFE 100%),
+                    linear-gradient(180deg, #FFFFFF 0%, #ECECEC 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 2.698px 2.923px -1.349px rgba(0, 0, 0, 0.25), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.full-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.12), 0 0 0 4px #F2F2F2;
+}
+
+.full-button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0.225px 0.225px rgba(0, 0, 0, 0.07), 0 0 0.225px 0.675px rgba(0, 0, 0, 0.05), 0 1px 2px -0.5px rgba(0, 0, 0, 0.15), 0 0.899px 3.598px 0.899px rgba(0, 0, 0, 0.08), 0 0 0 4px #F2F2F2;
+}
+
+.btn-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.btn-text {
+  font-size: 14px;
+  color: #636467;
+}
